@@ -39,3 +39,8 @@ plot(date_data,as.numeric(raw_data$Global_reactive_power),type = "o",pch = "",
      xlab = "",ylab = "Global_reactive_power")
 
 dev.off()
+#Well, The language of R is Chinese on my computer, so the lab of x-axis are 
+#Chinese words in default.
+#Here is the translation:
+#周四 == Thu  周五 == Fri  周六 == Sat
+#Thank you very much for your reviewing!
