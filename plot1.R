@@ -1,0 +1,20 @@
+data1 <- read.table("household_power_consumption.txt",
+                    sep = ";",stringsAsFactors = FALSE)
+raw_data1 <- subset(data1, V1 == "1/2/2007")
+raw_data2 <- subset(data1, V1 == "2/2/2007")
+raw_data <- rbind(raw_data1,raw_data2)
+# Read the data
+rm(data1)
+rm(raw_data1)
+rm(raw_data2)
+#remove in-process datasets
+
+colnames(raw_data) <- c("Date","Time","Global_active_power",
+                        "Global_reactive_power","Voltage","Global_intensity",
+                        "Sub_metering_1","Sub_metering_2","Sub_metering_3")
+
+
+png("plot1.png",width=480,height=480)
+hist(as.numeric(raw_data$Global_active_power),main = "Global Active Power", 
+     xlab = "Global Active Power(kilowatts)", col = "red")
+dev.off()
